@@ -5,10 +5,10 @@ import imageio
 import argparse
 
 
-def jpg2gif(PATH='/Users/jinbin/Demo_Folder/'):
+def jpg2gif(PATH):
     super_video_dirs = os.listdir(PATH)
 
-    df = pd.read_csv('/Users/jinbin/CAMP_videos/LOVEU-TGVE-2023_Dataset.csv')
+    df = pd.read_csv(os.path.join(PATH, 'LOVEU-TGVE-2023_Dataset.csv'))
     df_prompt = df[['Video name', 'Style Change Caption', 'Object Change Caption',
                     'Background Change Caption', 'Multiple Changes Caption']].loc[1:, :]
     df_prompt['style'] = df_prompt['Style Change Caption']
