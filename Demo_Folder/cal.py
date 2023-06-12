@@ -240,15 +240,6 @@ def PickScore(PATH, device):
         return sum(mean_scores_each_source)/len(mean_scores_each_source)
 
 
-
-def cal(PATH='/Users/jinbin/CAMP_videos',device='cuda:0'): 
-    model.to(device)
-    model_clip.to(device)
-   
-
-
-
-
 def main():
     args = argparse.ArgumentParser()
     args.add_argument('--path', type=str, default='/Users/jinbin/Demo_Folder/')
@@ -268,7 +259,7 @@ def main():
     PickScoreScore = PickScore(args.path, device)
     print("TextualAlignmentScore",TextualAlignmentScore)
     print("FrameConsistencyScore",FrameConsistencyScore)
-    print("PickScoreScore",PickScoreScore)
+    print("PickScore",PickScoreScore)
 
 if __name__ == '__main__':
     main()
